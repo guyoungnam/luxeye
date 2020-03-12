@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/contentsImageView"
+
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    android:layout_centerInParent="false"
+    android:layout_centerHorizontal="false"
+    android:layout_centerVertical="false"
+    android:layout_gravity="center_horizontal"
+    android:adjustViewBounds="true"
+    android:maxHeight="700dp"
+    android:scaleType="fitXY">
+
+
+</ImageView>

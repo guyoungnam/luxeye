@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "428485559422",
+    "firebase_url": "https://luxeye-54229.firebaseio.com",
+    "project_id": "luxeye-54229",
+    "storage_bucket": "luxeye-54229.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428485559422:android:df5c6b21edc264344c442f",
+        "android_client_info": {
+          "package_name": "com.example.luxeye"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428485559422-fo2fmpjopbm1j90sin451g84jr7m60ev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3KqKDHFPvPTzWEdbg_qJiPepmQTf5lVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428485559422-fo2fmpjopbm1j90sin451g84jr7m60ev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
