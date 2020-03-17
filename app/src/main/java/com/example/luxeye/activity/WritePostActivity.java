@@ -63,7 +63,7 @@ public class WritePostActivity extends BasicActivity {
     private RelativeLayout loaderLayout;
     private ImageView selectedImageVIew;
     private EditText selectedEditText;
-    private EditText contentsEditText;
+    private EditText contentsEditText,contentsEditText1;
     private EditText titleEditText;
     private PostInfo postInfo;
     private Util util;
@@ -79,7 +79,9 @@ public class WritePostActivity extends BasicActivity {
         buttonsBackgroundLayout = findViewById(R.id.buttonsBackgroundLayout);
         loaderLayout = findViewById(R.id.loaderLayout);
         contentsEditText = findViewById(R.id.contentsEditText);
+       // contentsEditText1 = findViewById(R.id.contentsEditText1);
         titleEditText = findViewById(R.id.titleEditText);
+
 
         findViewById(R.id.check).setOnClickListener(onClickListener);
         findViewById(R.id.image).setOnClickListener(onClickListener);
@@ -90,6 +92,8 @@ public class WritePostActivity extends BasicActivity {
 
         buttonsBackgroundLayout.setOnClickListener(onClickListener);
         contentsEditText.setOnFocusChangeListener(onFocusChangeListener);
+        //contentsEditText1.setOnFocusChangeListener(onFocusChangeListener);
+
         titleEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -231,12 +235,18 @@ public class WritePostActivity extends BasicActivity {
         if (title.length() > 0) {
             loaderLayout.setVisibility(View.VISIBLE);
             final ArrayList<String> contentsList = new ArrayList<>();
+            //final ArrayList<String> contentsList2 = new ArrayList<>();
             final ArrayList<String> formatList = new ArrayList<>();
 
             user = FirebaseAuth.getInstance().getCurrentUser();
             FirebaseStorage storage = FirebaseStorage.getInstance();
             StorageReference storageRef = storage.getReference();
             FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+
+            Log.d(TAG, "TAG1: " +title );
+            Log.d(TAG, "TAG2: " +contentsList );
+            
+
 
             final DocumentReference documentReference = postInfo == null ? firebaseFirestore.collection("posts").document() : firebaseFirestore.collection("posts").document(postInfo.getId());
             final Date date = postInfo == null ? new Date() : postInfo.getCreatedAt();
@@ -247,9 +257,13 @@ public class WritePostActivity extends BasicActivity {
                     if (view instanceof EditText) {
                         String text = ((EditText) view).getText().toString();
 
+
                         if (text.length() > 0) {
                             contentsList.add(text);
+                          //  contentsList2.add(text);
                             formatList.add("text");
+
+                            Log.d(TAG,"TAG4"+text);
                         }
                     } else if (!isStorageUrl(pathList.get(pathCount))) {
                         String path = pathList.get(pathCount);

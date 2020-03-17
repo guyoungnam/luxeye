@@ -40,8 +40,6 @@ public class HomeFragment extends Fragment {
     private boolean updating;
     private boolean topScrolled;
 
-    private ArrayList<UserInfo> userList;
-    private UserListAdapter userListAdapter;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -179,6 +177,7 @@ public class HomeFragment extends Fragment {
                                 postList.add(new PostInfo(
                                         document.getData().get("title").toString(),
                                         (ArrayList<String>) document.getData().get("contents"),
+                                        //(ArrayList<String>) document.getData().get("contents2"),
                                         (ArrayList<String>) document.getData().get("formats"),
                                         document.getData().get("publisher").toString(),
                                         new Date(document.getDate("createdAt").getTime()),

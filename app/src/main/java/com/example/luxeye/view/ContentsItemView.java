@@ -17,7 +17,7 @@ import com.example.luxeye.R;
 public class ContentsItemView extends LinearLayout {
 
     private ImageView imageView;
-    private EditText editText;
+    private EditText editText,editText1;
 
 
 
@@ -40,6 +40,7 @@ public class ContentsItemView extends LinearLayout {
 
         imageView = findViewById(R.id.contentsImageView);
         editText = findViewById(R.id.contentsEditText);
+        //editText1 = findViewById(R.id.contentsEditText1);
 
 
     }
@@ -50,6 +51,7 @@ public class ContentsItemView extends LinearLayout {
 
     public void setText(String text){
         editText.setText(text);
+       // editText1.setText(text);
 
     }
 
