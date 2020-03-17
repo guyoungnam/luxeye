@@ -9,7 +9,7 @@ import java.util.Map;
 public class PostInfo implements Serializable {
     private String title;
     private ArrayList<String> contents;
-    //private ArrayList<String> contents2;
+    private ArrayList<String> contents1;
     private ArrayList<String> formats;
     private String publisher;
     private Date createdAt;
@@ -24,15 +24,15 @@ public class PostInfo implements Serializable {
         this.id = id;
     }
 
- /*   public PostInfo(String title, ArrayList<String> contents,ArrayList<String> contents2, ArrayList<String> formats, String publisher, Date createdAt, String id){
+    public PostInfo(String title, ArrayList<String> contents,ArrayList<String> contents1, ArrayList<String> formats, String publisher, Date createdAt, String id){
         this.title = title;
         this.contents = contents;
-        this.contents2 = contents2;
+        this.contents1 = contents1;
         this.formats = formats;
         this.publisher = publisher;
         this.createdAt = createdAt;
         this.id = id;
-    }*/
+    }
 
     public PostInfo(String title, ArrayList<String> contents, ArrayList<String> formats, String publisher, Date createdAt){
         this.title = title;
@@ -46,7 +46,7 @@ public class PostInfo implements Serializable {
         Map<String, Object> docData = new HashMap<>();
         docData.put("title",title);
         docData.put("contents",contents);
-        //docData.put("contents2",contents2);
+        docData.put("contents1",contents1);
         docData.put("formats",formats);
         docData.put("publisher",publisher);
         docData.put("createdAt",createdAt);
@@ -65,12 +65,12 @@ public class PostInfo implements Serializable {
     public void setContents(ArrayList<String> contents){
         this.contents = contents;
     }
-  /*  public ArrayList<String> getContents2(){
-        return this.contents2;
+    public ArrayList<String> getContents1(){
+        return this.contents1;
     }
-    public void setContents2(ArrayList<String> contents2){
-        this.contents2 = contents2;
-    }*/
+    public void setContents1(ArrayList<String> contents1){
+        this.contents1 = contents1;
+    }
     public ArrayList<String> getFormats(){
         return this.formats;
     }

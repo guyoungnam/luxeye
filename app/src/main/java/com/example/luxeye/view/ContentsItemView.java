@@ -37,10 +37,11 @@ public class ContentsItemView extends LinearLayout {
         LayoutInflater layoutInflater = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         addView(layoutInflater.inflate(R.layout.view_contents_image, this, false));
         addView(layoutInflater.inflate(R.layout.view_contents_edit_text, this, false));
+        addView(layoutInflater.inflate(R.layout.view_contents_edit_text1, this, false));
 
         imageView = findViewById(R.id.contentsImageView);
         editText = findViewById(R.id.contentsEditText);
-        //editText1 = findViewById(R.id.contentsEditText1);
+        editText1 = findViewById(R.id.contentsEditText1);
 
 
     }
@@ -49,9 +50,9 @@ public class ContentsItemView extends LinearLayout {
         Glide.with(this).load(path).override(1000).into(imageView);
     }
 
-    public void setText(String text){
+    public void setText(String text, String text1){
         editText.setText(text);
-       // editText1.setText(text);
+        editText1.setText(text1);
 
     }
 
@@ -62,6 +63,7 @@ public class ContentsItemView extends LinearLayout {
 
     public void setOnFocusChangeListener(OnFocusChangeListener onFocusChangeListener){
         editText.setOnFocusChangeListener(onFocusChangeListener);
+        editText1.setOnFocusChangeListener(onFocusChangeListener);
     }
 }
 
