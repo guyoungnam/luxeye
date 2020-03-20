@@ -40,10 +40,20 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="나만의 코디법, 매칭하기 좋은 아이템 (최소 20자 이상)" />
+
                     <include
                         layout="@layout/view_contents_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="구입한곳, 구입가격, 할인정보" />
 
                     <include
                         layout="@layout/view_contents_edit_text1"

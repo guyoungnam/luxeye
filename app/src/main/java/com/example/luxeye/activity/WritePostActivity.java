@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -68,7 +69,7 @@ public class WritePostActivity extends BasicActivity {
     private PostInfo postInfo;
     private Util util;
     private int pathCount, successCount;
-
+ 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +82,9 @@ public class WritePostActivity extends BasicActivity {
         contentsEditText = findViewById(R.id.contentsEditText);
         contentsEditText1 = findViewById(R.id.contentsEditText1);
         titleEditText = findViewById(R.id.titleEditText);
+
+
+
 
 
         findViewById(R.id.check).setOnClickListener(onClickListener);
@@ -245,6 +249,7 @@ public class WritePostActivity extends BasicActivity {
 
             Log.d(TAG, "TAG1: " +title );
             Log.d(TAG, "TAG2: " +contentsList );
+            Log.d(TAG, "TAG3: " +contentsList1 );
             
 
 
@@ -252,8 +257,13 @@ public class WritePostActivity extends BasicActivity {
             final Date date = postInfo == null ? new Date() : postInfo.getCreatedAt();
             for (int i = 0; i < parent.getChildCount(); i++) {
                 LinearLayout linearLayout = (LinearLayout) parent.getChildAt(i);
+
+                Log.d(TAG, "TAG5: " +linearLayout );
+
                 for (int ii = 0; ii < linearLayout.getChildCount(); ii++) {
                     View view = linearLayout.getChildAt(ii);
+
+                    Log.d(TAG, "TAG6: " +view );
 
                     if (view instanceof EditText) {
                         String text = ((EditText) view).getText().toString();
@@ -267,7 +277,13 @@ public class WritePostActivity extends BasicActivity {
 
                             Log.d(TAG,"TAG4:"+text);
                         }
-                    } else if (!isStorageUrl(pathList.get(pathCount))) {
+                    }
+                    else if(view instanceof TextView){
+                        String text1 = ((TextView) view).getText().toString();
+                        Log.d(TAG,"TAG7:"+text1);
+
+                    }
+                    else if (!isStorageUrl(pathList.get(pathCount))) {
                         String path = pathList.get(pathCount);
                         successCount++;
                         contentsList.add(path);
