@@ -77,7 +77,7 @@ public class ReadContentsVIew extends LinearLayout {
             if (i == moreIndex) {
                 TextView textView = new TextView(context);
                 textView.setLayoutParams(layoutParams);
-                textView.setText("더보기...");
+                textView.setText("더보기....");
                 contentsLayout.addView(textView);
                 break;
             }

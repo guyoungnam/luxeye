@@ -21,12 +21,17 @@
             android:orientation="vertical"
             android:padding="10dp">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="브랜드명" />
+
             <EditText
                 android:id="@+id/titleEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="사용하신 제품을 선택해 주세요."
+                android:hint="내용"
                 android:inputType="textPersonName" />
 
             <LinearLayout
@@ -43,7 +48,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="나만의 코디법, 매칭하기 좋은 아이템 (최소 20자 이상)" />
+                        android:text="제품 이름" />
 
                     <include
                         layout="@layout/view_contents_edit_text"
@@ -53,10 +58,30 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="구입한곳, 구입가격, 할인정보" />
+                        android:text="나만의 코디법, 매칭하기 좋은 아이템 (최소 20자 이상)" />
 
                     <include
                         layout="@layout/view_contents_edit_text1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="구입한 곳, 구입 가격, 할인 정보" />
+
+                    <include
+                        layout="@layout/view_contents_edit_text2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="사고 만족했던 경험(최소 20자 이상)" />
+
+                    <include
+                        layout="@layout/view_contents_edit_text3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 

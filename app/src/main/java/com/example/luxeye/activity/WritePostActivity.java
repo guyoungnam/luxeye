@@ -64,7 +64,7 @@ public class WritePostActivity extends BasicActivity {
     private RelativeLayout loaderLayout;
     private ImageView selectedImageVIew;
     private EditText selectedEditText;
-    private EditText contentsEditText,contentsEditText1;
+    private EditText contentsEditText,contentsEditText1,contentsEditText2,contentsEditText3;
     private EditText titleEditText;
     private PostInfo postInfo;
     private Util util;
@@ -81,6 +81,8 @@ public class WritePostActivity extends BasicActivity {
         loaderLayout = findViewById(R.id.loaderLayout);
         contentsEditText = findViewById(R.id.contentsEditText);
         contentsEditText1 = findViewById(R.id.contentsEditText1);
+        contentsEditText2 = findViewById(R.id.contentsEditText2);
+        contentsEditText3 = findViewById(R.id.contentsEditText3);
         titleEditText = findViewById(R.id.titleEditText);
 
 
@@ -96,7 +98,8 @@ public class WritePostActivity extends BasicActivity {
 
         buttonsBackgroundLayout.setOnClickListener(onClickListener);
         contentsEditText.setOnFocusChangeListener(onFocusChangeListener);
-        contentsEditText1.setOnFocusChangeListener(onFocusChangeListener);
+        //contentsEditText1.setOnFocusChangeListener(onFocusChangeListener);
+        //contentsEditText2.setOnFocusChangeListener(onFocusChangeListener);
 
         titleEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -126,6 +129,8 @@ public class WritePostActivity extends BasicActivity {
                     String path = data.getStringExtra(INTENT_PATH);
                     pathList.add(path);
 
+
+                    
                     ContentsItemView contentsItemView = new ContentsItemView(this);
 
                     if (selectedEditText == null) {
@@ -239,7 +244,6 @@ public class WritePostActivity extends BasicActivity {
         if (title.length() > 0) {
             loaderLayout.setVisibility(View.VISIBLE);
             final ArrayList<String> contentsList = new ArrayList<>();
-            final ArrayList<String> contentsList1 = new ArrayList<>();
             final ArrayList<String> formatList = new ArrayList<>();
 
             user = FirebaseAuth.getInstance().getCurrentUser();
@@ -247,9 +251,9 @@ public class WritePostActivity extends BasicActivity {
             StorageReference storageRef = storage.getReference();
             FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
 
-            Log.d(TAG, "TAG1: " +title );
-            Log.d(TAG, "TAG2: " +contentsList );
-            Log.d(TAG, "TAG3: " +contentsList1 );
+            Log.d(TAG, "TAG title: " +title );
+            Log.d(TAG, "TAG contentsList: " +contentsList );
+           // Log.d(TAG, "TAG3: " +contentsList1 );
             
 
 
@@ -258,12 +262,12 @@ public class WritePostActivity extends BasicActivity {
             for (int i = 0; i < parent.getChildCount(); i++) {
                 LinearLayout linearLayout = (LinearLayout) parent.getChildAt(i);
 
-                Log.d(TAG, "TAG5: " +linearLayout );
+                Log.d(TAG, "TAG linearLayout: " +linearLayout );
 
                 for (int ii = 0; ii < linearLayout.getChildCount(); ii++) {
                     View view = linearLayout.getChildAt(ii);
 
-                    Log.d(TAG, "TAG6: " +view );
+                    Log.d(TAG, "TAG view: " +view );
 
                     if (view instanceof EditText) {
                         String text = ((EditText) view).getText().toString();
@@ -275,12 +279,16 @@ public class WritePostActivity extends BasicActivity {
                             formatList.add("text");
 
 
-                            Log.d(TAG,"TAG4:"+text);
+                            Log.d(TAG,"TAG text:"+text);
                         }
                     }
                     else if(view instanceof TextView){
                         String text1 = ((TextView) view).getText().toString();
-                        Log.d(TAG,"TAG7:"+text1);
+                        Log.d(TAG,"TAG text1:"+text1);
+
+                        String text = ((TextView) view).getText().toString();
+                        Log.d(TAG,"TAG text:"+text);
+
 
                     }
                     else if (!isStorageUrl(pathList.get(pathCount))) {
@@ -363,11 +371,22 @@ public class WritePostActivity extends BasicActivity {
     private void postInit() {
         if (postInfo != null) {
             titleEditText.setText(postInfo.getTitle());
+
+            Log.d(TAG, "TAG titleEditText: " +titleEditText );
+
+
             ArrayList<String> contentsList = postInfo.getContents();
+
+            Log.d(TAG, "TAG contentsList: " +contentsList);
+
             for (int i = 0; i < contentsList.size(); i++) {
                 String contents = contentsList.get(i);
+                Log.d(TAG, "TAG contents: " +contents);
+                
                 if (isStorageUrl(contents)) {
                     pathList.add(contents);
+
+
 
                     ContentsItemView contentsItemView = new ContentsItemView(this);
                     parent.addView(contentsItemView);
@@ -384,6 +403,8 @@ public class WritePostActivity extends BasicActivity {
                     contentsItemView.setOnFocusChangeListener(onFocusChangeListener);
                     if (i < contentsList.size() - 1) {
                         String nextContents = contentsList.get(i + 1);
+
+                        Log.d(TAG, "TAG nextContents: " +nextContents);
                         if (!isStorageUrl(nextContents)) {
                             contentsItemView.setText(nextContents);
                         }
@@ -391,7 +412,24 @@ public class WritePostActivity extends BasicActivity {
 
                 } else if (i == 0) {
                     contentsEditText.setText(contents);
+                    Log.d(TAG, "TAG contentsEditText: " +contentsEditText);
+                    Log.d(TAG, "TAG contents: " +contents);
+
+
+                } else if (i ==1){
+                    contentsEditText1.setText(contents);
+                    Log.d(TAG, "TAG contentsEditText1: " +contentsEditText1);
                 }
+                else if (i ==2){
+                    contentsEditText2.setText(contents);
+                    Log.d(TAG, "TAG contentsEditText2: " +contentsEditText2);
+                }
+                else if (i ==3){
+                    contentsEditText3.setText(contents);
+                    Log.d(TAG, "TAG contentsEditText3: " +contentsEditText3);
+                }
+
+              
             }
         }
     }

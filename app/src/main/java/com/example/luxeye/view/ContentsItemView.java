@@ -2,6 +2,7 @@ package com.example.luxeye.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -19,6 +20,7 @@ public class ContentsItemView extends LinearLayout {
     private ImageView imageView;
     private EditText editText,editText1;
 
+    private static final String TAG = "ContentsItemView";
 
 
     public ContentsItemView(Context context) {
@@ -37,11 +39,15 @@ public class ContentsItemView extends LinearLayout {
         LayoutInflater layoutInflater = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         addView(layoutInflater.inflate(R.layout.view_contents_image, this, false));
         addView(layoutInflater.inflate(R.layout.view_contents_edit_text, this, false));
-        addView(layoutInflater.inflate(R.layout.view_contents_edit_text1, this, false));
+
 
         imageView = findViewById(R.id.contentsImageView);
         editText = findViewById(R.id.contentsEditText);
-        editText1 = findViewById(R.id.contentsEditText1);
+
+        
+
+        Log.d(TAG, "TAG editText: " +editText);
+
 
 
     }
@@ -50,9 +56,10 @@ public class ContentsItemView extends LinearLayout {
         Glide.with(this).load(path).override(1000).into(imageView);
     }
 
-    public void setText(String text, String text1){
+    public void setText(String text){
         editText.setText(text);
-        editText1.setText(text1);
+        Log.d(TAG, "TAG1: " +editText);
+        editText1.setText(text);
 
     }
 
@@ -63,7 +70,7 @@ public class ContentsItemView extends LinearLayout {
 
     public void setOnFocusChangeListener(OnFocusChangeListener onFocusChangeListener){
         editText.setOnFocusChangeListener(onFocusChangeListener);
-        editText1.setOnFocusChangeListener(onFocusChangeListener);
+
     }
 }
 

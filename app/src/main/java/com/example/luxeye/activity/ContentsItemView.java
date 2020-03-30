@@ -34,8 +34,13 @@ class ContentsItemView extends LinearLayout {
         addView(layoutInflater.inflate(R.layout.view_contents_image, this, false));
         addView(layoutInflater.inflate(R.layout.view_contents_edit_text, this, false));
 
+
         imageView = findViewById(R.id.contentsImageView);
         editText = findViewById(R.id.contentsEditText);
+
+
+
+
     }
 
     public void setImage(String path){
@@ -44,6 +49,7 @@ class ContentsItemView extends LinearLayout {
 
     public void setText(String text){
         editText.setText(text);
+
     }
 
     public void setOnClickListener(OnClickListener onClickListener){
@@ -52,5 +58,6 @@ class ContentsItemView extends LinearLayout {
 
     public void setOnFocusChangeListener(OnFocusChangeListener onFocusChangeListener){
         editText.setOnFocusChangeListener(onFocusChangeListener);
+
     }
 }
