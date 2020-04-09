@@ -31,7 +31,7 @@ import java.util.ArrayList;
 
 public class UserListFragment extends Fragment {
 
-    private static final String TAG = "HomeFragment";
+    private static final String TAG = "UserListFragment";
     private FirebaseFirestore firebaseFirestore;
     private UserListAdapter userListAdapter;
     private ArrayList<UserInfo> userList;

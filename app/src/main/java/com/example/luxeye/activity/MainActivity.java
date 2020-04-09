@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import com.example.luxeye.PostInfo;
 import com.example.luxeye.R;
 import com.example.luxeye.adapter.HomeAdapter;
+import com.example.luxeye.fragment.ContentsListFragment;
 import com.example.luxeye.fragment.HomeFragment;
 import com.example.luxeye.fragment.UserInfoFragment;
 import com.example.luxeye.fragment.UserListFragment;
@@ -115,10 +116,10 @@ public class MainActivity extends BasicActivity {
                                     .replace(R.id.container, userInfoFragment)
                                     .commit();
                             return true;
-                        case R.id.userList:
-                            UserListFragment userListFragment = new UserListFragment();
+                        case R.id.contentsList:
+                            ContentsListFragment contentsListFragment = new ContentsListFragment();
                             getSupportFragmentManager().beginTransaction()
-                                    .replace(R.id.container, userListFragment)
+                                    .replace(R.id.container, contentsListFragment)
                                     .commit();
                             return true;
                     }
