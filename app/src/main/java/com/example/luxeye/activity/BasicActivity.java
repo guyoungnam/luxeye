@@ -31,10 +31,11 @@ public class BasicActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
     }
 
-    public void setToolbarTitle(String title){
+    public void setToolbarTitle(String title) {
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.setTitle(title);
         }
+    
     }
 }

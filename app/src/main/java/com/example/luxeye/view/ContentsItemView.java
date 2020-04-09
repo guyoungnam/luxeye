@@ -58,7 +58,7 @@ public class ContentsItemView extends LinearLayout {
 
     public void setText(String text){
         editText.setText(text);
-        Log.d(TAG, "TAG1: " +editText);
+        Log.d(TAG, "TAG editText: " +editText);
         editText1.setText(text);
 
     }
