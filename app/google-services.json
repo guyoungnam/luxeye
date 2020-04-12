@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "428485559422",
-    "firebase_url": "https://luxeye-54229.firebaseio.com",
-    "project_id": "luxeye-54229",
-    "storage_bucket": "luxeye-54229.appspot.com"
+    "project_number": "1093513008745",
+    "firebase_url": "https://bobbyluxeye.firebaseio.com",
+    "project_id": "bobbyluxeye",
+    "storage_bucket": "bobbyluxeye.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:428485559422:android:df5c6b21edc264344c442f",
+        "mobilesdk_app_id": "1:1093513008745:android:10d78ba28cda91e402f4f8",
         "android_client_info": {
-          "package_name": "com.example.luxeye"
+          "package_name": "com.bobby.luxeye"
         }
       },
       "oauth_client": [
         {
-          "client_id": "428485559422-fo2fmpjopbm1j90sin451g84jr7m60ev.apps.googleusercontent.com",
+          "client_id": "1093513008745-o3u68flibmvj27m11fgd89m7rc2a10jn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC3KqKDHFPvPTzWEdbg_qJiPepmQTf5lVI"
+          "current_key": "AIzaSyA_b4HgLvtlkzVJ8hxJXzVsSc0NMDhskfs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "428485559422-fo2fmpjopbm1j90sin451g84jr7m60ev.apps.googleusercontent.com",
+              "client_id": "1093513008745-o3u68flibmvj27m11fgd89m7rc2a10jn.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

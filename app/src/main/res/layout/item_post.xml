@@ -56,12 +56,12 @@
             android:layout_marginBottom="5dp"
             android:background="#DDDDDD"/>
 
-        <com.example.luxeye.view.ReadContentsVIew
+        <com.bobby.luxeye.view.ReadContentsVIew
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/readContentsView">
 
-        </com.example.luxeye.view.ReadContentsVIew>
+        </com.bobby.luxeye.view.ReadContentsVIew>
 
     </LinearLayout>
 
